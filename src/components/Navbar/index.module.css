@@ -1,0 +1,44 @@
+.navbar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(230, 230, 230);
+}
+
+.darkNavbar {
+  background-color: rgb(53, 51, 51);
+}
+
+.navLogo {
+  all: unset;
+  color: rgb(28, 26, 26);
+  font-size: 30px;
+  font-family: bree serid, "Times New Roman", Times, serif;
+}
+
+.navDarkLogo {
+  color: rgb(214, 207, 207);
+}
+
+.navBtnContainer {
+  display: flex;
+  align-items: center;
+}
+.navBtn {
+  all: unset;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.avatar {
+  height: 40px;
+  width: 40px;
+  margin: 0 10px;
+  background-color: grey;
+  border-radius: 50%;
+}
+
+/* * {
+  border: 1px solid red;
+} */

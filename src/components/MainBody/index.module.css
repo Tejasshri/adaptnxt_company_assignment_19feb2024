@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
+
+.mainBody {
+  background-color: rgba(240, 240, 240);
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainBodyDark {
+  background-color: rgba(40, 40, 40);
+}
+
+.badge {
+  /* width: 100px;
+    height: 40px; */
+  align-self: flex-start;
+  border-radius: 4px;
+  background-color: rgb(207, 197, 197);
+  padding: 10px 30px 10px 10px;
+  position: relative;
+  transition: 0.4s;
+}
+
+.badgeDark {
+  background-color: rgb(49, 47, 47);
+  cursor: pointer;
+}
+
+.badge:hover {
+  padding: 11px 33px 11px 11px;
+}
+
+.badge:hover p {
+  font-size: 18px;
+}
+
+.badge p {
+  all: unset;
+  text-transform: capitalize;
+  font-weight: 400;
+  font-family: Monotype-corsive, "Roboto Slab", serif;
+  transition: 0.4s;
+}
+
+.icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
