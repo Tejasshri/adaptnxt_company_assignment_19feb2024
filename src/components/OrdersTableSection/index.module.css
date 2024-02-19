@@ -145,7 +145,7 @@
   background-color: transparent;
   padding: 5px;
   border-radius: 5px;
-  color: white;
+  color: rgb(130, 126, 126);
 }
 
 .pageChangebtns {
@@ -184,6 +184,30 @@
   margin-left: 10px;
 }
 
-/* .pageCount::after{
-  content: '/page';
-} */
+
+.loadingView {
+  display: flex;
+  flex-direction: column;
+  color: grey;
+  justify-content: center;
+  align-items: center ;
+  margin-top: 20px;
+  flex-grow: 1;
+}
+
+.loadingView h2 {
+  animation: blow 1s linear infinite;
+  font-weight: 400 !important;
+}
+
+@keyframes blow {
+  0%{
+    color: white;
+  }
+  50%{
+    color: red;
+  }
+  100%{
+    color: aqua;
+  }
+}

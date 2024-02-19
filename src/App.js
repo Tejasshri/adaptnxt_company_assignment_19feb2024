@@ -39,6 +39,7 @@ function App() {
   const [seletedOrderStatusListItem, setSelectedOrderStatusListItem] = useState(
     orderStatusList[0].id
   );
+  const [isSidebarOpened, setIsSidebarOpened] = useState(true);
 
   const changeOrderStatus = (oStatusId) => {
     setSelectedOrderStatusListItem(oStatusId);
@@ -54,6 +55,7 @@ function App() {
         seletedOrderStatusListItem,
         changeOrderStatus,
         orderStatusList,
+        isSidebarOpened, setIsSidebarOpened
       }}>
       <MyDashboard />
     </ReactContext.Provider>

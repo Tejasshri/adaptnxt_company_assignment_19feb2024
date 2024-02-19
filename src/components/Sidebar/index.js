@@ -5,6 +5,7 @@ import { AiOutlineDashboard } from "react-icons/ai";
 import { GoListUnordered } from "react-icons/go";
 import { CiShare2 } from "react-icons/ci";
 import { MdOutlineLocalShipping, MdOutlineInventory2 } from "react-icons/md";
+import { MdMenuOpen } from "react-icons/md";
 
 // Context
 import ReactContext from "../../context/ReactContext";
@@ -12,18 +13,29 @@ import ReactContext from "../../context/ReactContext";
 // CSS Module
 import styles from "./index.module.css";
 
-
 // Main Sidebar Component
 const Sidebar = () => {
-  const { isThemeLight, sidebarSelection, setSidebarSelection } =
-    useContext(ReactContext);
+  const {
+    isThemeLight,
+    sidebarSelection,
+    setSidebarSelection,
+    isSidebarOpened,
+    setIsSidebarOpened,
+  } = useContext(ReactContext);
   return (
     <aside
-      className={
+      className={`${
         isThemeLight
           ? styles.sidebar
           : `${styles.sidebar} ${styles.darkSidebar}`
-      }>
+      } ${isSidebarOpened ? null : styles.sidebarClosed}`}>
+      <button
+        onClick={() => setIsSidebarOpened((n) => !n)}
+        className={`${styles.openNavbarBtn} ${
+          isSidebarOpened ? null : styles.isClosed
+        }`}>
+        <MdMenuOpen color={isThemeLight ? "black" : "white"} />
+      </button>
       <ul className={styles.sidebarElementList}>
         <li
           className={`${
@@ -33,14 +45,15 @@ const Sidebar = () => {
               ? styles.sidebarListItem
               : `${styles.sidebarListItem} ${styles.sidebarDarkListItem}`
           }`}>
-          <AiOutlineDashboard
-            color={isThemeLight ? "black" : "white"}
-            size={24}
-          />
           <button
             onClick={() => setSidebarSelection("dashboard")}
-            className={styles.sidebarBtn}>
-            Dashboard
+            className={`${styles.sidebarBtn}`}>
+            <AiOutlineDashboard
+              className={styles.sidebarIcon}
+              color={isThemeLight ? "black" : "white"}
+              size={24}
+            />
+            <p>Dashboard</p>
           </button>
         </li>
         <li
@@ -51,14 +64,15 @@ const Sidebar = () => {
               ? styles.sidebarListItem
               : `${styles.sidebarListItem} ${styles.sidebarDarkListItem}`
           }`}>
-          <MdOutlineInventory2
-            color={isThemeLight ? "black" : "white"}
-            size={24}
-          />
           <button
             onClick={() => setSidebarSelection("inventory")}
             className={styles.sidebarBtn}>
-            Inventory
+            <MdOutlineInventory2
+              className={styles.sidebarIcon}
+              color={isThemeLight ? "black" : "white"}
+              size={24}
+            />
+            <p>Inventory</p>
           </button>
         </li>
         <li
@@ -69,11 +83,15 @@ const Sidebar = () => {
               ? styles.sidebarListItem
               : `${styles.sidebarListItem} ${styles.sidebarDarkListItem}`
           }`}>
-          <GoListUnordered color={isThemeLight ? "black" : "white"} size={24} />
           <button
             onClick={() => setSidebarSelection("orders")}
             className={styles.sidebarBtn}>
-            Orders
+            <GoListUnordered
+              className={styles.sidebarIcon}
+              color={isThemeLight ? "black" : "white"}
+              size={24}
+            />
+            <p>Orders</p>
           </button>
         </li>
         <li
@@ -84,14 +102,15 @@ const Sidebar = () => {
               ? styles.sidebarListItem
               : `${styles.sidebarListItem} ${styles.sidebarDarkListItem}`
           }`}>
-          <MdOutlineLocalShipping
-            color={isThemeLight ? "black" : "white"}
-            size={24}
-          />
           <button
             onClick={() => setSidebarSelection("shipping")}
             className={styles.sidebarBtn}>
-            Shipping
+            <MdOutlineLocalShipping
+              className={styles.sidebarIcon}
+              color={isThemeLight ? "black" : "white"}
+              size={24}
+            />
+            <p>Shipping</p>
           </button>
         </li>
         <li
@@ -102,11 +121,15 @@ const Sidebar = () => {
               ? styles.sidebarListItem
               : `${styles.sidebarListItem} ${styles.sidebarDarkListItem}`
           }`}>
-          <CiShare2 color={isThemeLight ? "black" : "white"} size={24} />
           <button
             onClick={() => setSidebarSelection("channal")}
             className={styles.sidebarBtn}>
-            Channal
+            <CiShare2
+              className={styles.sidebarIcon}
+              color={isThemeLight ? "black" : "white"}
+              size={24}
+            />
+            <p>Channal</p>
           </button>
         </li>
       </ul>

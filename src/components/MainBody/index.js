@@ -4,8 +4,8 @@ import React, { useContext } from "react";
 import styles from "./index.module.css";
 
 // Components
-import OrderStatusSection from "../OrderStatusSection";
-import OrderDetailsSection from "../OrderDetailsSection";
+import OrdersTabSection from "../OrdersTabSection";
+import OrdersTableSection from "../OrdersTableSection";
 
 // Icons
 import { IoIosClose } from "react-icons/io";
@@ -15,6 +15,7 @@ import ReactContext from "../../context/ReactContext";
 
 const MainBody = () => {
   const { sidebarSelection, isThemeLight } = useContext(ReactContext);
+  
   return (
     <div
       className={
@@ -31,8 +32,12 @@ const MainBody = () => {
           color={isThemeLight ? "black" : "white"}
         />
       </div>
-      <OrderStatusSection />
-      <OrderDetailsSection />
+      {sidebarSelection === "orders" && (
+        <>
+          <OrdersTabSection />
+          <OrdersTableSection />
+        </>
+      )}
     </div>
   );
 };

@@ -9,7 +9,7 @@ import ReactContext from "../../context/ReactContext";
 // CSS Module
 import styles from "./index.module.css";
 
-const OrderStatusSection = () => {
+const OrderTabSection = () => {
   const { orderStatusList, changeOrderStatus, seletedOrderStatusListItem } =
     useContext(ReactContext);
   return (
@@ -28,4 +28,4 @@ const OrderStatusSection = () => {
   );
 };
 
-export default OrderStatusSection;
+export default OrderTabSection;

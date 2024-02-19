@@ -1,10 +1,20 @@
 .sidebar {
   width: 200px;
   background-color: rgba(230, 230, 230);
+  position: relative;
+  transition: .4s;
+}
+.sidebarClosed {
+  width: 80px;
 }
 
 .darkSidebar {
   background-color: rgb(67, 64, 64);
+}
+
+.sidebarClosed .sidebarBtn p {
+  transition: .4s;
+  display: none !important;
 }
 
 .sidebarElementList {
@@ -16,8 +26,6 @@
 }
 
 .sidebarListItem {
-  /* background-color: rgb(148, 138, 138); */
-  padding-left: 16px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -32,19 +40,47 @@
   /* background-color: grey; */
 }
 
+.sidebarIcon {
+  margin: 0 10px;
+}
+
 .sidebarBtn {
   all: unset;
-  margin-left: 10px;
   flex-grow: 1;
   padding: 16px 0;
   padding-left: 10px;
+  display: flex;
+  align-items: center;
 }
 
-/* *{
-    border: 1px solid greenyellow !important;
-} */
+.sidebarBtn p {
+  all: unset;
+  font-family: bree serif;
+  /* display: none; */
+}
 
 .selected {
   border: 2px solid grey;
   border-right: 7px solid grey;
+}
+
+.openNavbarBtn {
+  position: absolute;
+  background-color: rgb(191, 184, 184);
+  border-radius: 6px;
+  border: 0;
+  right: -16px;
+  top: 0;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.isClosed {
+  transform: rotate(180deg);
+}
+
+@keyframes rotate180 {
 }
